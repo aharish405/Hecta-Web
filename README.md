@@ -10,7 +10,7 @@ A modern, responsive B2B manufacturing website for **Hecta Enterprises** (Sudha 
 - **Location**: Gagillapur, Dundigal-Gandimaisamma Mandal, Hyderabad, Telangana
 - **Contact**: 
   - Phone: +91 8074818235
-  - Email: pemmakotlu@gmail.com
+  - Email: hectaenterprises@gmail.com
   - Maps: https://maps.app.goo.gl/iJjaz3G9BK3U2imX6
 
 ## 🚀 Features
