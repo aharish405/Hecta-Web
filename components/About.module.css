@@ -1,0 +1,251 @@
+.about {
+    background: var(--off-white);
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.content {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease;
+}
+
+.content.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.intro strong {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.highlightCard {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.content.visible .highlightCard {
+    opacity: 1;
+}
+
+.highlightCard:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+}
+
+.cardContent h4 {
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.cardContent p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.imageSection {
+    position: relative;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease 0.2s;
+}
+
+.imageSection.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.mainImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .mainImage {
+    transform: scale(1.05);
+}
+
+.imageOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(10, 22, 40, 0.95), transparent);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .imageOverlay {
+    transform: translateY(0);
+}
+
+.overlayContent h3 {
+    color: var(--accent-orange);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlayContent p {
+    color: var(--white);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.locationCard {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: 2rem;
+    border-left: 4px solid var(--accent-orange);
+}
+
+.locationIcon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.locationCard h4 {
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.locationCard p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .content,
+    .imageSection {
+        transform: none;
+    }
+
+    .content.visible,
+    .imageSection.visible {
+        transform: none;
+    }
+
+    .highlightCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon {
+        margin: 0 auto;
+    }
+
+    .locationCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .locationIcon {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro {
+        font-size: 1rem;
+    }
+
+    .highlightCard {
+        padding: 1rem;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .cardContent h4 {
+        font-size: 1rem;
+    }
+
+    .cardContent p {
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

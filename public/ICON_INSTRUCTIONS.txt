@@ -1,0 +1,24 @@
+# PWA Icon Placeholder
+
+This is a placeholder file. To complete the PWA setup:
+
+1. Create a 192x192px PNG icon with your company logo
+2. Save it as `icon-192x192.png` in the `public/` folder
+3. Create a 512x512px PNG icon with your company logo
+4. Save it as `icon-512x512.png` in the `public/` folder
+5. Create a favicon.ico file and save it in the `public/` folder
+
+Recommended icon design:
+- Use the letter "H" for Hecta
+- Industrial theme with dark blue (#1e3a5f) and orange (#ff6b35)
+- Metallic or gradient finish
+- High contrast for visibility
+- Square format with rounded corners
+
+You can use tools like:
+- Canva (https://canva.com)
+- Figma (https://figma.com)
+- Adobe Express (https://express.adobe.com)
+- Or hire a designer on Fiverr/Upwork
+
+For now, the website will work without these icons, but they enhance the PWA experience.

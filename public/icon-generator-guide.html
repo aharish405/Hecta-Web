@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator - Hecta Enterprises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e3a5f;
+        }
+        .icon-preview {
+            width: 192px;
+            height: 192px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0a1628 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .icon-text {
+            font-size: 120px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8c61 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Arial Black', sans-serif;
+        }
+        .instructions {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+            margin-top: 20px;
+        }
+        .instructions h3 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+        .instructions ol {
+            line-height: 1.8;
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .tool-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+        }
+        .tool-card h4 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+        .tool-card a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 PWA Icon Generator Guide</h1>
+        <p>Create professional app icons for Hecta Enterprises website</p>
+        
+        <div class="icon-preview">
+            <div class="icon-text">H</div>
+        </div>
+        <p style="text-align: center; color: #666;">Preview: Simple "H" logo concept</p>
+
+        <div class="instructions">
+            <h3>📋 Quick Instructions</h3>
+            <ol>
+                <li><strong>Design your icon</strong> using one of the tools below</li>
+                <li><strong>Use these colors:</strong>
+                    <ul>
+                        <li>Background: Dark Blue (#1e3a5f) to Navy (#0a1628)</li>
+                        <li>Letter/Logo: Orange (#ff6b35) gradient</li>
+                    </ul>
+                </li>
+                <li><strong>Create two sizes:</strong>
+                    <ul>
+                        <li>192 x 192 pixels (save as: icon-192x192.png)</li>
+                        <li>512 x 512 pixels (save as: icon-512x512.png)</li>
+                    </ul>
+                </li>
+                <li><strong>Save to:</strong> <code>public/</code> folder in your project</li>
+                <li><strong>Create favicon:</strong> 32x32 pixels (save as: favicon.ico)</li>
+            </ol>
+        </div>
+
+        <h3>🛠️ Recommended Tools</h3>
+        <div class="tools">
+            <div class="tool-card">
+                <h4>Canva</h4>
+                <p>Easy drag-and-drop design</p>
+                <a href="https://canva.com" target="_blank">Visit Canva →</a>
+            </div>
+            <div class="tool-card">
+                <h4>Figma</h4>
+                <p>Professional design tool</p>
+                <a href="https://figma.com" target="_blank">Visit Figma →</a>
+            </div>
+            <div class="tool-card">
+                <h4>Adobe Express</h4>
+                <p>Quick logo maker</p>
+                <a href="https://express.adobe.com" target="_blank">Visit Adobe →</a>
+            </div>
+            <div class="tool-card">
+                <h4>Favicon.io</h4>
+                <p>Generate favicon from text</p>
+                <a href="https://favicon.io" target="_blank">Visit Favicon.io →</a>
+            </div>
+        </div>
+
+        <div class="instructions" style="margin-top: 30px; background: #fff3e0; border-left-color: #ff6b35;">
+            <h3>💡 Design Tips</h3>
+            <ul>
+                <li>Keep it simple - the icon will be small on mobile devices</li>
+                <li>Use high contrast for visibility</li>
+                <li>Consider a rounded square shape (not perfect circle)</li>
+                <li>Test on both light and dark backgrounds</li>
+                <li>The letter "H" is a good starting point for Hecta</li>
+                <li>Add subtle metallic or gradient effects for premium look</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 8px; text-align: center;">
+            <h3 style="color: #2e7d32; margin-top: 0;">✅ Website works without icons!</h3>
+            <p style="color: #555;">The website is fully functional without custom icons. They just enhance the PWA experience when users install the app on their devices.</p>
+        </div>
+    </div>
+</body>
+</html>
