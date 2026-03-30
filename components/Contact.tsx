@@ -1,7 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
+
+// ─── EmailJS Configuration ────────────────────────────────────────────────────
+// 1. Sign up at https://www.emailjs.com (free: 200 emails/month)
+// 2. Create a service (Gmail) → copy Service ID below
+// 3. Create an email template → copy Template ID below
+// 4. Get your Public Key from Account → copy below
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz456'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'AbCdEf1234567890'
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -29,25 +40,60 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
+        const templateParams = {
+            company_name:    formData.companyName,
+            contact_person:  formData.contactPerson,
+            from_email:      formData.email,
+            phone:           formData.phone,
+            industry:        formData.industry  || 'Not specified',
+            material:        formData.material  || 'Not specified',
+            quantity:        formData.quantity  || 'Not specified',
+            location:        formData.location  || 'Not specified',
+            message:         formData.message   || 'No additional details',
+            to_email:        'hectaenterprises@gmail.com',
+        };
+
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams,
+                EMAILJS_PUBLIC_KEY
+            );
             setSubmitStatus('success');
             setFormData({
-                companyName: '',
-                contactPerson: '',
-                email: '',
-                phone: '',
-                industry: '',
-                material: '',
-                quantity: '',
-                location: '',
-                message: ''
+                companyName: '', contactPerson: '', email: '', phone: '',
+                industry: '', material: '', quantity: '', location: '', message: ''
             });
+            setTimeout(() => setSubmitStatus('idle'), 6000);
+        } catch (error) {
+            console.error('EmailJS error:', error);
+            setSubmitStatus('error');
+            setTimeout(() => setSubmitStatus('idle'), 6000);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
-            setTimeout(() => setSubmitStatus('idle'), 5000);
-        }, 1500);
+    const handleWhatsApp = () => {
+        const text = `*New Quote Enquiry - Hecta Enterprises*
+
+🏢 *Company:* ${formData.companyName || 'Not provided'}
+👤 *Contact:* ${formData.contactPerson || 'Not provided'}
+📧 *Email:* ${formData.email || 'Not provided'}
+📞 *Phone:* ${formData.phone || 'Not provided'}
+🏭 *Industry:* ${formData.industry || 'Not specified'}
+🔧 *Material:* ${formData.material || 'Not specified'}
+📦 *Quantity:* ${formData.quantity || 'Not specified'}
+📍 *Location:* ${formData.location || 'Not specified'}
+
+💬 *Message:*
+${formData.message || 'No additional details'}`;
+
+        const encoded = encodeURIComponent(text);
+        window.open(`https://wa.me/919949302800?text=${encoded}`, '_blank');
     };
 
     return (
@@ -69,7 +115,13 @@ export default function Contact() {
 
                         {submitStatus === 'success' && (
                             <div className={styles.successMessage}>
-                                ✓ Thank you! Your quote request has been submitted successfully.
+                                ✓ Thank you! Your quote request has been submitted successfully. We'll get back to you within 24 hours.
+                            </div>
+                        )}
+
+                        {submitStatus === 'error' && (
+                            <div className={styles.errorMessage}>
+                                ✗ Something went wrong. Please email us directly at <strong>hectaenterprises@gmail.com</strong>
                             </div>
                         )}
 
@@ -207,6 +259,13 @@ export default function Contact() {
                                 >
                                     {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
                                 </button>
+                                <button
+                                    type="button"
+                                    className={`btn ${styles.whatsappBtn}`}
+                                    onClick={handleWhatsApp}
+                                >
+                                    💬 Send Enquiry on WhatsApp
+                                </button>
                                 <p className={styles.formNote}>
                                     📎 You can also email drawings to: <strong>hectaenterprises@gmail.com</strong>
                                 </p>
@@ -221,8 +280,8 @@ export default function Contact() {
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIcon}>📞</div>
                                 <div>
-                                    <h4>Phone</h4>
-                                    <a href="tel:+918074818235">+91 8074818235</a>
+                                    <h4>Phone / WhatsApp</h4>
+                                    <a href="tel:+919949302800">+91 99493 02800</a>
                                 </div>
                             </div>
 

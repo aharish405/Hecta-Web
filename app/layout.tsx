@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Roboto_Condensed } from 'next/font/google'
 import './globals.css'
 
@@ -15,6 +15,13 @@ const robotoCondensed = Roboto_Condensed({
     display: 'swap',
 })
 
+export const viewport: Viewport = {
+    themeColor: '#1e3a5f',
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+}
+
 export const metadata: Metadata = {
     title: 'Hecta Enterprises - Precision Sheet Metal Stamping & Fabrication for Automotive',
     description: 'Leading manufacturer of high-quality sheet metal stamping and fabrication services for two-wheeler and four-wheeler automotive OEMs. Progressive die stamping, laser cutting, CNC machining, and quality assurance since 1993.',
@@ -30,12 +37,6 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    viewport: {
-        width: 'device-width',
-        initialScale: 1,
-        maximumScale: 5,
-    },
-    themeColor: '#1e3a5f',
 }
 
 export default function RootLayout({
@@ -49,7 +50,6 @@ export default function RootLayout({
                 <link rel="manifest" href="/manifest.json" />
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/icon-192x192.png" />
-                <meta name="theme-color" content="#1e3a5f" />
             </head>
             <body>{children}</body>
         </html>

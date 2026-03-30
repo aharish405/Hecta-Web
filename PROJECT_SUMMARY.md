@@ -215,7 +215,7 @@ Hecta-Web/
 - **Company**: Sudha Engineering Works (Hecta Enterprises)
 - **Founded**: 1993
 - **Location**: Gagillapur, Hyderabad, Telangana
-- **Phone**: +91 8074818235
+- **Phone**: +91 9949302800
 - **Email**: pemmakotlu@gmail.com
 - **Maps**: https://maps.app.goo.gl/iJjaz3G9BK3U2imX6
 

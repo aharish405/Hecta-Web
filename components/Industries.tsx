@@ -46,11 +46,11 @@ export default function Industries() {
         {
             title: 'Structural Stamped Parts',
             description: 'Critical structural components for automotive body and frame',
-            icon: '🔩',
+            icon: '🔨',
             applications: ['Body Panels', 'Reinforcement Plates', 'Mounting Brackets']
         },
         {
-            title: 'EV Battery Systems',
+            title: 'EV Battery Enclosures',
             description: 'Specialized components for electric vehicle battery assemblies',
             icon: '🔋',
             applications: ['Battery Trays', 'Cell Connectors', 'Cooling Brackets']

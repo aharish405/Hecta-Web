@@ -154,7 +154,7 @@ npm run dev
 
 - Check the main README.md for detailed documentation
 - Contact: pemmakotlu@gmail.com
-- Phone: +91 8074818235
+- Phone: +91 9949302800
 
 ---
 

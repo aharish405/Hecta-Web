@@ -158,11 +158,11 @@ export default function Capabilities() {
                         </div>
                         <div className={styles.machineryCard}>
                             <div className={styles.machineryImage}>
-                                <img src="/images/quality_inspection.png" alt="Powder Coating Facility" />
+                                <img src="/images/stamping.jpg" alt="Sheet Metal Stamping" />
                             </div>
                             <div className={styles.machineryContent}>
-                                <h4>Finishing</h4>
-                                <p>Powder Coating Facility</p>
+                                <h4>Stamping</h4>
+                                <p>Progressive & Deep Draw Stamping</p>
                             </div>
                         </div>
                     </div>

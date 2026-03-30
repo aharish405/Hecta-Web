@@ -49,7 +49,7 @@ export default function Footer() {
                         <ul className={styles.contactList}>
                             <li>
                                 <span className={styles.icon}>📞</span>
-                                <a href="tel:+918074818235">+91 8074818235</a>
+                                <a href="tel:+919949302800">+91 99493 02800</a>
                             </li>
                             <li>
                                 <span className={styles.icon}>✉️</span>

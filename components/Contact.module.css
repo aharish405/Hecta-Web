@@ -43,6 +43,16 @@
     animation: fadeInUp 0.5s ease;
 }
 
+.errorMessage {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    animation: fadeInUp 0.5s ease;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -107,6 +117,15 @@
 .formActions button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.whatsappBtn {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #ffffff;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .formNote {
